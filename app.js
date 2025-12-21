@@ -2,13 +2,18 @@ const express = require("express");
 const app = express();
 const port = 5500;
 
+// to connect to our db
+
 const dbConnection = require("./db/dbConfig");
+
+// json middleware
 
 app.use(express.json());
 
 // user middleware
+
 const userRoutes = require("./routes/userRoute");
-app.use("/api/answers", userRoutes);
+app.use("/api/users", userRoutes);
 
 // question middleware
 // const questionRoutes = require("./routes/questionRoute");
@@ -21,7 +26,6 @@ app.use("/api/answers", userRoutes);
 
 
 
-// to connnect to our db
 
 async function start() {
   try {
