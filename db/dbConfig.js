@@ -9,10 +9,4 @@ const dbConnection = mysql2.createPool({
   port:3307
 });
 
-dbConnection.query("select 'test' ", (err, results) => {
-  if (err) {
-    console.error("❌ DB connection failed:", err.message);
-  } else {
-    console.log("✅ DB connected successfully");
-  }
-});
+module.exports = dbConnection.promise();

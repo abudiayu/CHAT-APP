@@ -13,4 +13,4 @@ router.post("/login",login)
 // check user
 router.get("/check",checkUser)
 
-module.exports = router
+module.exports = router;
