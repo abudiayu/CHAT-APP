@@ -16,13 +16,18 @@ const userRoutes = require("./routes/userRoute");
 app.use("/api/users", userRoutes);
 
 // question middleware
-// const questionRoutes = require("./routes/questionRoute");
-// app.use("/api/answers", answerRoutes);
+const authMiddleware = require("./middleware/middleware")
+
+// authMiddleware
+const questionsRoutes = require("./routes/questionRoute");
+// important to protect auth only login person access it b/s of "authMiddleware"
+app.use("/api/questions" , authMiddleware, questionsRoutes);
 
 // answer middleware
-// const answerRoutes = require("./routes/answerRoute");
+const answerRoutes = require("./routes/answerRoute");
 
-// app.use("/api/answers", answerRoutes);
+app.use("/api/answers", authMiddleware, answerRoutes);
+
 
 
 

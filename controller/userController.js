@@ -90,10 +90,11 @@ async function login(req, res) {
 }
 
 
-
-
 async function checkUser(req,res){
-    res.send("checkUser")
+  const username = req.user.username
+  const userid = req.user.userid
+  
+  res.status(StatusCodes.OK).json({msg:"Valid User", username ,userid})
 }
 
 module.exports = {register,login,checkUser};

@@ -1,14 +1,15 @@
-// const express = require("express");
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-// // post answer
-// router.post("/:questionId", (req, res) => {
-//   res.send(`answer posted for question ${req.params.questionId}`);
-// });
+const {
+  createAnswer,
+  getAnswersByQuestion,
+} = require("../controller/answerController");
 
-// // get answers for a question
-// router.get("/:questionId", (req, res) => {
-//   res.send(`get answers for question ${req.params.questionId}`);
-// });
+// post answer to a question
+router.post("/:questionid", createAnswer);
 
-// module.exports = router;
+// get answers for a question
+router.get("/:questionid", getAnswersByQuestion);
+
+module.exports = router;
