@@ -1,9 +1,17 @@
 import React from 'react'
+import { useContext } from 'react'
+import { AppState } from '../App'
 
 function Home() {
+  const {user} = useContext(AppState)
   return (
     <div>
-      HOME
+      <h1>HOME</h1>
+      <br />
+      <br />
+      <br />
+      <br />
+      <h2>Well come : {user.username}</h2>
     </div>
   )
 }

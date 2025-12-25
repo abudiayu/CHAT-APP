@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = 5500;
 
+//  take CORS
+const cors = require("cors")
+app.use(cors())
 // to connect to our db
 
 const dbConnection = require("./db/dbConfig");

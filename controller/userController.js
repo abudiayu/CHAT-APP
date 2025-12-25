@@ -58,14 +58,14 @@ async function login(req, res) {
     if (user.length == 0) {
       return res
         .status(StatusCodes.UNAUTHORIZED)
-        .json({ msg: "invalid credential" });
+        .json({ msg: "invalid credential email" });
     }
 
     const isMatch = await bcrypt.compare(password, user[0].password);
     if (!isMatch) {
       return res
         .status(StatusCodes.UNAUTHORIZED)
-        .json({ msg: "invalid credential" });
+        .json({ msg: "invalid credential password" });
     }
     const username = user[0].username
     const userid = user[0].userid
@@ -78,7 +78,8 @@ async function login(req, res) {
 
     return res.status(StatusCodes.OK).json({
       msg: "Login successful",
-      token
+      token,
+      username
     });
 
   } catch (error) {
