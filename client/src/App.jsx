@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import axios from './axiosConfig';
+import Question from "./pages/questionPage/Question";
 
 export const AppState = createContext();
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/ask" element={<Question />} />
         </Routes>
     </AppState.Provider>
   );   

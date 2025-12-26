@@ -1,0 +1,130 @@
+/* =====================
+   PAGE LAYOUT
+===================== */
+.ask-page {
+  min-height: 100vh;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* =====================
+   CARD
+===================== */
+.ask-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* TITLE */
+.ask-card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #38bdf8;
+  font-size: 1.4rem;
+}
+
+/* ERROR */
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+/* =====================
+   INPUTS
+===================== */
+.ask-card input,
+.ask-card textarea {
+  width: 100%;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  outline: none;
+  margin-bottom: 14px;
+  transition: border 0.2s ease;
+  box-sizing: border-box;
+}
+
+.ask-card textarea {
+  resize: none;
+}
+
+.ask-card input::placeholder,
+.ask-card textarea::placeholder {
+  color: #64748b;
+}
+
+.ask-card input:focus,
+.ask-card textarea:focus {
+  border-color: #38bdf8;
+}
+
+/* =====================
+   ACTIONS
+===================== */
+.ask-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ask-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+/* POST */
+.ask-actions button:first-child {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.ask-actions button:first-child:hover {
+  background: #0ea5e9;
+}
+
+/* CANCEL */
+.ask-actions .cancel {
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.ask-actions .cancel:hover {
+  background: #020617;
+  border-color: #38bdf8;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 480px) {
+  .ask-card {
+    padding: 20px;
+  }
+
+  .ask-card h2 {
+    font-size: 1.2rem;
+  }
+}
